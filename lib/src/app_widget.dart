@@ -15,6 +15,8 @@ class AppWidget extends StatelessWidget {
           primaryIconTheme: const IconThemeData(
             color: Colors.white,
           ),
+          floatingActionButtonTheme: FloatingActionButtonThemeData(
+              backgroundColor: const Color(0xFF128C7E)),
           // ignore: prefer_const_constructors
           appBarTheme: AppBarTheme(
             backgroundColor: const Color(0xff075e54),

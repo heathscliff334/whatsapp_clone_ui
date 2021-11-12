@@ -30,16 +30,18 @@ class _ChatsViewState extends State<ChatsView> {
                     height: 65,
                     child: Row(
                       children: [
-                        Hero(
-                          tag: 'hero',
-                          child: CircleAvatar(
-                            backgroundColor: Color(0xff075e54),
-                            radius: 35,
-                            child: Icon(
-                              Icons.person_rounded,
-                              color: Colors.white,
-                            ),
-                          ),
+                        Container(
+                          margin: EdgeInsets.only(left: 5, right: 10),
+                          width: 55,
+                          height: 55,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: NetworkImage(
+                                    "https://picsum.photos/id/2$i/200"),
+                                fit: BoxFit.contain,
+                              ),
+                              border: Border.all(width: 1, color: Colors.white),
+                              borderRadius: BorderRadius.circular(100)),
                         ),
                         Container(
                           padding: EdgeInsets.only(top: 4),

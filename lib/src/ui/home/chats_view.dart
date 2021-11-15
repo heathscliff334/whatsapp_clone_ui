@@ -26,7 +26,6 @@ class _ChatsViewState extends State<ChatsView> {
                   child: Container(
                     color: Colors.white,
                     padding: EdgeInsets.symmetric(horizontal: 3, vertical: 6),
-                    margin: EdgeInsets.symmetric(vertical: 2),
                     height: 65,
                     child: Row(
                       children: [
@@ -54,7 +53,9 @@ class _ChatsViewState extends State<ChatsView> {
                               Row(
                                 children: [
                                   Text(
-                                    "User ${i + 1}",
+                                    (i % 3 == 1 || i >= 9)
+                                        ? "User ${i + 1}"
+                                        : "+62 8999-0000-${i}7${i}9",
                                     style: TextStyle(
                                         fontWeight: FontWeight.w600,
                                         fontSize: 16),
@@ -65,7 +66,9 @@ class _ChatsViewState extends State<ChatsView> {
                                     child: Text(
                                       "10:51 AM",
                                       style: TextStyle(
-                                          color: Colors.grey,
+                                          color: (i < 2)
+                                              ? Color(0xFF128C7E)
+                                              : Colors.grey,
                                           fontWeight: FontWeight.w500,
                                           fontSize: 13),
                                     ),
@@ -73,20 +76,48 @@ class _ChatsViewState extends State<ChatsView> {
                                 ],
                               ),
                               SizedBox(height: 5),
-                              Expanded(
-                                child: Container(
-                                  height: 20,
-                                  padding: EdgeInsets.only(right: 5),
-                                  child: Text(
-                                    "Hello world!",
-                                    style: TextStyle(
-                                        color: Colors.grey,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 14),
-                                    overflow: TextOverflow.ellipsis,
-                                    maxLines: 1,
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: Container(
+                                      height: 20,
+                                      padding: EdgeInsets.only(right: 5),
+                                      child: Text(
+                                        "Hello world!",
+                                        style: TextStyle(
+                                            color: Colors.grey,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 14),
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 1,
+                                      ),
+                                    ),
                                   ),
-                                ),
+                                  (i < 2)
+                                      ? Container(
+                                          alignment: Alignment.center,
+                                          width: 70,
+                                          // height: 25,
+                                          child: Container(
+                                            alignment: Alignment.center,
+                                            width: 25,
+                                            height: 25,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(100),
+                                              color: Color(0xFF128C7E),
+                                            ),
+                                            child: Text(
+                                              "${3 - i}",
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.w500,
+                                                  fontSize: 13),
+                                            ),
+                                          ),
+                                        )
+                                      : Container()
+                                ],
                               )
                             ],
                           ),

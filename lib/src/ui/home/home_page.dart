@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:whatsapp_clone_ui/src/ui/home/calls_view.dart';
 import 'package:whatsapp_clone_ui/src/ui/home/chats_view.dart';
 import 'package:whatsapp_clone_ui/src/ui/home/open_camera.dart';
 import 'package:whatsapp_clone_ui/src/ui/home/status_view.dart';
@@ -49,7 +50,7 @@ class _HomePageState extends State<HomePage> {
           OpenCamera(),
           ChatsView(),
           StatusView(),
-          Container(child: Text('calls')),
+          CallsView()
         ]),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
